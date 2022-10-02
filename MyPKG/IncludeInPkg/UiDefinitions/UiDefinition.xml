@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<uidefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation=" https://prd-use-rad-assets.azurewebsites.net/ExtensionsSchemaDefinition.xsd">
+	<version ver="3.0"/>
+	<tile alticontext="{tempString}" secondaryicon="{SecondaryIconValue}" navigation="show:MainPage" action="command:AllOff" showinhomepage="#false" showinroompage="#true"/>
+	<layouts>
+		<layout id="MainPage" title="^MainPageTitle" isdefaultlayout="#true">
+			<controls>
+				<toggle id="Socket1" label="^Socket1" value="{Socket1value}"/>
+				<toggle id="Socket2" label="^Socket2" value="{Socket2value}"/>
+				<toggle id="Socket3" label="^Socket3" value="{Socket3value}"/>
+				<toggle id="Socket4" label="^Socket4" value="{Socket4value}"/>
+				<toggle id="Socket5" label="^Socket5" value="{Socket5value}"/>
+				<toggle id="Socket6" label="^Socket6" value="{Socket6value}"/>
+				<toggle id="Socket7" label="^Socket7" value="{Socket7value}"/>
+				<toggle id="Socket8" label="^Socket8" value="{Socket8value}"/>
+				
+				<button id ="AllSocketsOn" label="^ButtonAllOn" action="command:SocketAllOn"/>
+				<button id ="AllSocketsOff" label="^ButtonAllOff" action="command:SocketAllOff"/>
+				<button id ="RefreshSockets" label="^ButtonRefresh" action="command:SocketRefresh"/>
+			</controls>
+		</layout>
+	</layouts>
+	<alerts/>
+</uidefinition>

@@ -1,0 +1,14 @@
+{
+  "Socket1": "Modem",
+  "Socket2": "Router",
+  "Socket3": "Switch 1",
+  "Socket4": "Switch 2",
+  "Socket5": "Socket 5",
+  "Socket6": "Socket 6",
+  "Socket7": "Socket 7",
+  "Socket8": "Socket 8",
+  "MainPageTitle": "PDU Control",
+  "ButtonAllOn": "Sockets On",
+  "ButtonAllOff": "Sockets Off",
+  "ButtonRefresh": "Refresh FB"
+}

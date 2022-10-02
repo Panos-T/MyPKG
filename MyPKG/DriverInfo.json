@@ -1,0 +1,57 @@
+{
+  "CrestronSerialDeviceApi": {
+    "DeviceSupport": {
+      "SupportsUsername": true,
+      "SupportsPassword": true
+    },
+    "DeviceSupport2": [],
+    "GeneralInformation": {
+      "DeviceType": "PDU",
+      "Manufacturer": "Pakedge",
+      "BaseModel": "P8",
+      "VersionDate": "2022-04-20, 13:56:00",
+      "DriverVersion": "1.2.2",
+      "SdkVersion": "15.0000.0006",
+      "Description": "1st Driver",
+      "Guid": "AEEB0E32-DD0B-4396-8879-8DC23276CD71",
+      "ExtensionDeviceData": {
+        "IsExtensionDevice": true,
+        "IsMediaDevice": false,
+        "IsMediaSource": false
+      },
+      "SupportedSeries": [ "P-Series" ],
+      "SupportedModels": [
+        "P8"
+      ]
+    },
+    "Api": {
+      "Communication": {
+        "CommunicationType": 1,
+        "Protocol": -1,
+        "Baud": -1,
+        "Parity": -1,
+        "HwHandshake": -1,
+        "SwHandshake": -1,
+        "DataBits": 0,
+        "StopBits": -1,
+        "Port": 23,
+        "EnableAutoPolling": false,
+        "EnableAutoReconnect": true,
+        "TimeBetweenCommands": 500,
+        "ResponseTimeout": 3000,
+        "WaitForResponse": false,
+        "IpProtocol": 0,
+        "IsUserAdjustable": false,
+        "Authentication": {
+          "Type": "UsernamePassword",
+          "Required": false,
+          "DefaultUsername": "pakedge",
+          "DefaultPassword": "pakedgep"
+        },
+        "IsSecure": false,
+        "UserAdjustableProperties": []
+      }
+    },
+    "Dependencies": [ "PrimS.Telnet.Sync.dll" ]
+  }
+}
