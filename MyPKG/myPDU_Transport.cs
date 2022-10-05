@@ -31,6 +31,7 @@ namespace MyPKG
 
         public string GetResponse()
         {
+
            return telnetClient.TerminatedRead("\n>");
         }
 
@@ -40,6 +41,8 @@ namespace MyPKG
             ErrorLog.Notice("@@Transport.SendMethod()@@  Message:{0} State:{1}", message, telnetClient.IsConnected);
 
             telnetClient.WriteLine(message);
+
+
         }
 
         public override void Start()

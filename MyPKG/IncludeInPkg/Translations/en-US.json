@@ -10,5 +10,6 @@
   "MainPageTitle": "PDU Control",
   "ButtonAllOn": "Sockets On",
   "ButtonAllOff": "Sockets Off",
-  "ButtonRefresh": "Refresh FB"
+  "ButtonRefresh": "Refresh FB",
+  "ButtonRefreshT": "Refresh Temp"
 }

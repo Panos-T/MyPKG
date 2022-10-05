@@ -18,6 +18,7 @@
 				<button id ="AllSocketsOn" label="^ButtonAllOn" action="command:SocketAllOn"/>
 				<button id ="AllSocketsOff" label="^ButtonAllOff" action="command:SocketAllOff"/>
 				<button id ="RefreshSockets" label="^ButtonRefresh" action="command:SocketRefresh"/>
+				<button id ="RefreshTemp" label="^ButtonRefreshT" action="command:TempRefresh"/>
 			</controls>
 		</layout>
 	</layouts>

@@ -10,5 +10,6 @@
   "MainPageTitle": "Έλεγχος PDU",
   "ButtonAllOn": "Ενεργοποίηση όλων",
   "ButtonAllOff": "Απενεργοποίηση όλων",
-  "ButtonRefresh": "Ανανέωση"
+  "ButtonRefresh": "Ανανέωση",
+  "ButtonRefreshT": "Ανανέωση θερμοκρασίας"
 }

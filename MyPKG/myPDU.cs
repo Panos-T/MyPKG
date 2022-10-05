@@ -41,6 +41,7 @@ namespace MyPKG
             var locEN = GetLocalizedStrings("en-US");
             ButtonNum = 8;
             Create_Device_Definition();
+            UpdateUI("30.2°");
 
             
             
@@ -49,6 +50,8 @@ namespace MyPKG
             CrestronConsole.AddNewConsoleCommand(togglePDU, "pduToggle", "pduToggle socketNum state", ConsoleAccessLevelEnum.AccessAdministrator);
             CrestronConsole.AddNewConsoleCommand(togglePDUS, "pduToggleS", "pduToggle 1", ConsoleAccessLevelEnum.AccessAdministrator);
             CrestronConsole.AddNewConsoleCommand(togglePDUD, "pduToggleD", "pduToggle Direct", ConsoleAccessLevelEnum.AccessAdministrator);
+            CrestronConsole.AddNewConsoleCommand(refreshTemp, "refreshT", "Set Temp to 27.5", ConsoleAccessLevelEnum.AccessAdministrator);
+            CrestronConsole.AddNewConsoleCommand(PrintMSG, "printmsg", "Print current MSG Variable", ConsoleAccessLevelEnum.AccessAdministrator);
 
             ErrorLog.Notice("@@Execute myPDU.Initialize@@");
             ErrorLog.Notice("@@myPDU.Initialize@@ DefUsr: {0} DefPsw: {1} || user:{2} pass:{3} ", DefaultUsername, DefaultPassword, SupportsUsername,SupportsPassword);
@@ -121,9 +124,29 @@ namespace MyPKG
         }
         #endregion
 
-        
+
 
         #region Debugging Functions
+
+        private void PrintMSG(string cmdParameters)
+        {
+
+            ErrorLog.Notice("MSG-> {0}",Transport.GetResponse());
+        }
+
+        private void refreshTemp(string cmdParameters)
+        {
+            if (cmdParameters[0].Equals(""))
+            {
+                devTemp.Value = "27.5°";
+            }
+            else
+            {
+                devTemp.Value = ""+cmdParameters[0] + cmdParameters[1] + cmdParameters[2] + cmdParameters[3] + "°";
+            }
+            Commit();
+        }
+
         private void connectPrint(string cmdParameters)
         {
             ErrorLog.Notice("@@Connect and Print@@ Connection Status: {0}, Authentication Status: {1}.", Transport.connectionStatus, Transport.authStatus);
@@ -262,6 +285,7 @@ namespace MyPKG
         public void UpdateUI(string temperature)
         {
             devTemp.Value = temperature;
+            Commit();
         }
 
 
@@ -271,19 +295,26 @@ namespace MyPKG
             switch (command)
             {
                 case "SocketAllOn":
+                    ErrorLog.Notice("@@myPDU.DoCommand@@ Command <{0}> found", command);
                     Protocol.AllSocketsOn();
                     break;
                 case "SocketAllOff":
+                    ErrorLog.Notice("@@myPDU.DoCommand@@ Command <{0}> found", command);
                     Protocol.AllSocketsOff();
                     break;
                 case "SocketRefresh":
+                    ErrorLog.Notice("@@myPDU.DoCommand@@ Command <{0}> found", command);
                     Protocol.SocketRefresh();
+                    break;
+                case "TempRefresh":
+                    ErrorLog.Notice("@@myPDU.DoCommand@@ Command <{0}> found", command);
+                    Protocol.TempRefresh();
                     break;
                 default:
                     ErrorLog.Notice("@@myPDU.DoCommand@@ Command <{0}> not found", command);
                     break;
             }
-
+            Commit();
             return new OperationResult(OperationResultCode.Success);
         }
 
